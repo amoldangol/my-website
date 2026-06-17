@@ -1,312 +1,251 @@
-/* Reset & Basics */
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background: #f8f9fa;
-    color: #333;
+    color: #2c3e2e; /* Dark forest tone for text */
     line-height: 1.6;
-    scroll-behavior: smooth;
+    background-color: #fff;
 }
 
-/* Header */
-header {
-    background: #50C878; /* emerald green */
+/* Navigation (Forest Green) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #1b3322; 
     color: #fff;
     position: sticky;
     top: 0;
     z-index: 1000;
-    width: 100%;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
 }
 
 .logo {
-    font-size: 1.8em;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e8f0e9;
 }
 
-nav ul {
+.nav-links {
     display: flex;
     list-style: none;
 }
 
-nav ul li {
-    margin-left: 25px;
+.nav-links li {
+    margin-left: 20px;
 }
 
-nav ul li a {
+.nav-links a {
+    color: #e8f0e9;
     text-decoration: none;
-    color: #fff;
     transition: color 0.3s;
-    font-weight: 500;
 }
 
-nav ul li a:hover {
-    color: #e6ffe6;
+.nav-links a:hover {
+    color: #f4c430; /* Golden Summer Sun Accent */
 }
 
-/* Mobile Menu */
-.menu-toggle {
-    display: none;
-    font-size: 1.8em;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    nav {
-        display: none;
-        width: 100%;
-        background: #50C878;
-    }
-
-    nav.active {
-        display: block;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        padding: 10px 0;
-    }
-
-    nav ul li {
-        margin: 15px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-}
-
-/* Hero/Profile Section */
-#hero {
+/* Hero Section (Deep Forest Cover with Sun-soaked text) */
+.hero {
+    background: linear-gradient(rgba(27, 51, 34, 0.85), rgba(44, 76, 53, 0.75)), url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1200') no-repeat center center/cover;
+    height: 85vh; /* Increased height to accommodate the profile picture */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 60px 20px 40px;
-    background: #eaffea;
+    color: #fff;
 }
 
-.profile-img {
+.hero-content {
+    max-width: 800px;
+}
+
+/* --- Profile Picture Custom Styling --- */
+.profile-pic-container {
+    margin-bottom: 25px; /* Spacing above the "Hi" text */
+    display: flex;
+    justify-content: center;
+}
+
+.profile-pic {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #50C878;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures image isn't stretched */
+    border: 5px solid #e8f0e9; /* Light border around the picture */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
-#hero h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #2e4e1f;
-}
-
-#hero p {
-    font-size: 1.1em;
-    color: #444;
-}
-
-/* 🔗 Social Icons */
-.social-links {
-    margin-top: 15px;
-}
-
-.social-links a {
-    color: #50C878;
-    font-size: 1.8em;
-    margin: 0 10px;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    transform: translateY(-4px);
-}
-
-/* Specific hover colors */
-.social-links a:nth-child(1):hover { /* LinkedIn */
-    color: #0077b5;
-}
-
-.social-links a:nth-child(2):hover { /* GitHub */
-    color: #24292e;
-}
-
-.social-links a:nth-child(3):hover { /* Instagram gradient */
-    color: #e4405f;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Sections */
-section {
-    padding: 60px 20px;
-}
-
-section h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #222;
-}
-
-/* About */
-#about p {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 1.1em;
-}
-
-/* Projects */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.project-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.project-card h3 {
-    margin-bottom: 10px;
-    color: #50C878;
-}
-
-/* Contact */
-#contact {
-    text-align: center;
+.highlight {
+    color: #f4c430; /* Summer Amber */
 }
 
 .btn {
     display: inline-block;
-    background: #50C878;
+    padding: 12px 24px;
+    background-color: #2d6a4f; /* Forestry Green button */
     color: #fff;
-    padding: 10px 25px;
-    border-radius: 25px;
     text-decoration: none;
-    margin-top: 15px;
-    transition: background 0.3s;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .btn:hover {
-    background: #2e8b57;
+    background-color: #1b3322;
+    transform: translateY(-2px);
+}
+
+/* --- Social Icons Custom Styling --- */
+.social-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon svg {
+    width: 35px;
+    height: 35px;
+    fill: #e8f0e9; /* Off-white standard color */
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+/* Original colors on Hover only */
+.social-icon.linkedin:hover svg {
+    fill: #0077b5; /* Official LinkedIn Blue */
+}
+
+.social-icon.github:hover svg {
+    fill: #181717; /* Official GitHub Dark */
+}
+
+.social-icon:hover svg {
+    transform: scale(1.15);
+}
+
+/* Sections */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.bg-light {
+    background-color: #f2f6f3; /* Light warm sage background */
+}
+
+.section h2 {
+    color: #1b3322;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+.section p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Grids for Skills and Projects */
+.skills-grid, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.skill-card, .project-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-top: 4px solid #40916c; /* Bright Forestry shade */
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.skill-card:hover, .project-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card h3, .project-card h3 {
+    color: #1b3322;
+    margin-bottom: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background: #e2ece9;
+    color: #2d6a4f;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+/* Contact Form */
+#contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form input, #contact-form textarea {
+    padding: 12px;
+    border: 1px solid #c7d1c9;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    outline: none;
+    border-color: #40916c;
+}
+
+#contact-form button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#form-response {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2d6a4f;
 }
 
 /* Footer */
 footer {
-    background: #50C878;
-    color: #aaa;
+    background-color: #1b3322;
+    color: #e8f0e9;
     text-align: center;
-    padding: 15px 0;
-    font-size: 0.9em;
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 🌫️ Smooth fade-in animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    will-change: opacity, transform;
-}
-
-/* When element becomes visible */
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Optional: slower fade for hero section */
-#hero.fade-in {
-    transition-duration: 1.5s;
-}
-
-
-/* Prevent header from covering section titles */
-section {
-    scroll-margin-top: 80px; /* adjust based on your header height */
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* Highlight for active nav link */
-nav ul li a.active {
-    color: #50C878; /* emerald green highlight */
-    font-weight: 600;
-    border-bottom: 2px solid #50C878;
-    transition: color 0.3s, border-bottom 0.3s;
-}
-
-#contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 400px;
-  margin: 20px auto;
-}
-
-#contact input,
-#contact textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  width: 100%;
-}
-
-#contact button {
-  background-color: #50C878; /* emerald green */
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-
-#contact button:hover {
-  background-color: #3da563;
-}
-
-#status {
-  margin-top: 10px;
-  font-weight: 500;
-  text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
 }
